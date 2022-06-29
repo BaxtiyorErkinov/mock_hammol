@@ -1,0 +1,151 @@
+@mixin helpers {
+	width: 100px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #829ad5;
+	color: #fff;
+	font-weight: 600;
+	font-family: Ubuntu;
+	border-radius: 3px;
+	font-size: 14px;
+}
+
+.product__detail__container {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 100px;
+
+	.backToPrevPage {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		width: 100px;
+		height: 30px;
+		border-radius: 3px;
+		font-size: 16px;
+		border: none;
+		outline: none;
+		color: #fff;
+		background: #829ad5;
+		cursor: pointer;
+		transition: all .3s;
+
+		&:hover {
+			transition: all .3s;
+			border: 1px solid #829ad5;
+			color: #829ad5;
+			background: #fff;
+		}
+	}
+
+	.product__detail {
+		display: flex;
+		width: 1000px;
+		height: 400px;
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+		position: relative;
+		column-gap: 10px;
+
+		.product__banner {
+			min-width: 35%;
+			max-width: 35%;
+
+			img {
+				min-width: 100%;
+				max-width: 100%;
+				min-height: 100%;
+				max-height: 100%;
+			}
+
+			@media screen and (max-width: 768px) and (min-width: 480px) {
+				min-width: 40%;
+				max-width: 40%;
+			}
+
+			@media screen and (max-width: 480px) {
+				min-width: 100%;
+			}
+		}
+
+		.product__content {
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			.product__information {
+				margin-bottom: 5px;
+			}
+
+			.top__section {
+				display: flex;
+				column-gap: 15px;
+				margin-bottom: 15px;
+
+				.brand {
+					position: absolute;
+					top: 10px;
+					left: 10px;
+					@include helpers
+				}
+
+				.category {
+					@include helpers
+				}
+
+				.rating {
+					@include helpers
+				}
+			}
+
+			.bottom__section {
+				margin-top: 10px;
+
+				.title {
+					font-size: 20px;
+					font-weight: 600;
+					color: #000;
+					font-family: Ubuntu;
+				}
+
+				.description {
+					color: #A9A9A9;
+					font-family: Ubuntu;
+					margin-top: 5px;
+				}
+
+				.images {
+					width: 100%;
+					display: flex;
+					flex-wrap: wrap;
+					column-gap: 15px;
+
+					@media screen and (max-width: 480px) {
+						justify-content: center;
+					}
+
+					img {
+						width: 40px;
+						height: 40px;
+						border-radius: 5px;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+
+		@media screen and (max-width: 480px) {
+			flex-direction: column;
+			height: 500px;
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		padding: 0 30px;
+	}
+}
